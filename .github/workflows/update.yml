@@ -2,8 +2,8 @@ name: 🛠️ Update Contributions Table
 
 on:
   schedule:
-    - cron: '0 8 * * *'     # zilnic la 08:00 UTC
-  workflow_dispatch:        # rulează și manual
+    - cron: '0 8 * * *'
+  workflow_dispatch:
 
 jobs:
   update-readme:
@@ -22,10 +22,10 @@ jobs:
         run: pip install requests
 
       - name: 🧠 Run script to update README.md
+        env:
+          GITHUB_USERNAME: Radu-Sb33
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          echo "Exporting environment variables..."
-          export GITHUB_USERNAME="Radu-Sb33"
-          export GITHUB_TOKEN="${{ secrets.GH_PAT }}"
           echo "Running script..."
           python generate_contributions.py
 
