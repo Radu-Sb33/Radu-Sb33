@@ -38,4 +38,5 @@ jobs:
           git remote set-url origin https://Radu-Sb33:${GH_PAT}@github.com/Radu-Sb33/Radu-Sb33.git
           git add README.md
           git commit -m "🔄 Update contributions table" || echo "No changes to commit"
-          git push
+          git push origin HEAD:main
+
