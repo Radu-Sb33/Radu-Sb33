@@ -2,8 +2,11 @@ name: 🛠️ Update Contributions Table
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # zilnic la 08:00 UTC
-  workflow_dispatch:     # rulează și manual
+    - cron: '0 8 * * *'   # rulează zilnic la 08:00 UTC
+  workflow_dispatch:       # permite rularea manuală
+  push:                    # rulează când dai push (opțional)
+    branches:
+      - main               # sau branch-ul tău principal
 
 jobs:
   update-readme:
@@ -34,4 +37,3 @@ jobs:
           git add README.md
           git commit -m "🔄 Update contributions table" || echo "No changes to commit"
           git push
-
