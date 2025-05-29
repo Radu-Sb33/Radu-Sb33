@@ -1,19 +1,19 @@
 name: 🛠️ Update Contributions Table
 
 on:
+  workflow_dispatch:        # rulează manual
   schedule:
-    - cron: '0 8 * * *'
-  workflow_dispatch:
+    - cron: '0 8 * * *'    # zilnic la 08:00 UTC
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Clone repository
+      - name: 📥 Checkout repo
         uses: actions/checkout@v3
 
-      - name: 🐍 Set up Python
+      - name: 🐍 Setup Python 3.10
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
@@ -21,15 +21,13 @@ jobs:
       - name: 📦 Install dependencies
         run: pip install requests
 
-      - name: 🧠 Run script to update README.md
+      - name: 🧠 Run update script
         env:
           GITHUB_USERNAME: Radu-Sb33
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-        run: |
-          echo "Running script..."
-          python generate_contributions.py
+        run: python generate_contributions.py
 
-      - name: 🚀 Commit & Push changes
+      - name: 🚀 Commit and Push changes
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
         run: |
@@ -39,4 +37,3 @@ jobs:
           git add README.md
           git commit -m "🔄 Update contributions table" || echo "No changes to commit"
           git push origin HEAD:main
-
