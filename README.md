@@ -74,7 +74,7 @@ My current toolkit includes:
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Radu-Sb33&theme=tokyonight&layout=compact)
 ![Stats](https://github-readme-stats.vercel.app/api?username=Radu-Sb33&show_icons=true&theme=tokyonight)
 ![Streak](https://github-readme-streak-stats.herokuapp.com/?user=Radu-Sb33&theme=tokyonight)
-![Trophies](https://github-profile-trophy.vercel.app/?username=Radu-Sb33&theme=tokyonight)
+
 
 > Projects that i worked on / contributed to:
 
@@ -91,6 +91,4 @@ My current toolkit includes:
 
 ## 🏆 GitHub Trophies
 
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Radu-Sb33&theme=tokyonight&no-frame=true&no-bg=true&margin-w=15&margin-h=15&column=7" alt="Radu's GitHub Trophies"/>
-</p>
+![Trophies](https://github-profile-trophy.vercel.app/?username=Radu-Sb33&theme=tokyonight)
