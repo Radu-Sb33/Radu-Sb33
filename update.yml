@@ -25,10 +25,7 @@ jobs:
         env:
           GITHUB_USERNAME: Radu-Sb33
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: |
-          echo "🔐 Writing token to script..."
-          sed -i "s|TOKEN = .*|TOKEN = '${{ secrets.GH_TOKEN }}'|" generate_contributions.py
-          python generate_contributions.py
+        run: python generate_contributions.py
 
       - name: 🚀 Commit & Push changes
         run: |
