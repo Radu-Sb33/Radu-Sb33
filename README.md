@@ -75,6 +75,7 @@ My current toolkit includes:
 ![Stats](https://github-readme-stats.vercel.app/api?username=Radu-Sb33&show_icons=true&theme=tokyonight)
 ![Streak](https://github-readme-streak-stats.herokuapp.com/?user=Radu-Sb33&theme=tokyonight)
 
+<!-- CONTRIBUTIONS-START -->
 
 > Projects that i worked on / contributed to:
 
@@ -86,6 +87,7 @@ My current toolkit includes:
 - 🔗 [Radu-Sb33/MIPS_Pipeline](https://github.com/Radu-Sb33/MIPS_Pipeline)
 - 🔗 [Radu-Sb33/Image_Binarization](https://github.com/Radu-Sb33/Image_Binarization)
 
+<!-- CONTRIBUTIONS-END -->
 
 ---
 
