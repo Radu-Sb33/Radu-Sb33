@@ -1,12 +1,9 @@
 name: 🛠️ Update Contributions Table
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '0 8 * * *'  # Zilnic la 08:00 UTC
-  push:
-    branches:
-      - main              # Sau branch-ul principal al tău
+    - cron: '0 8 * * *'     # zilnic la 08:00 UTC
+  workflow_dispatch:        # rulează și manual
 
 jobs:
   update-readme:
@@ -25,18 +22,20 @@ jobs:
         run: pip install requests
 
       - name: 🧠 Run script to update README.md
-        env:
-          GITHUB_USERNAME: Radu-Sb33
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
-        run: python generate_contributions.py
+        run: |
+          echo "Exporting environment variables..."
+          export GITHUB_USERNAME="Radu-Sb33"
+          export GITHUB_TOKEN="${{ secrets.GH_PAT }}"
+          echo "Running script..."
+          python generate_contributions.py
 
       - name: 🚀 Commit & Push changes
         env:
-          TOKEN: ${{ secrets.GH_PAT }}
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git remote set-url origin https://Radu-Sb33:${TOKEN}@github.com/Radu-Sb33/Radu-Sb33.git
+          git remote set-url origin https://Radu-Sb33:${GH_PAT}@github.com/Radu-Sb33/Radu-Sb33.git
           git add README.md
           git commit -m "🔄 Update contributions table" || echo "No changes to commit"
           git push
